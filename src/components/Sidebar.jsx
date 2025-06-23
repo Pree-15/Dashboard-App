@@ -62,7 +62,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
           sx={{
             width: drawerWidth,
             "& .MuiDrawer-paper": {
-              color: theme.palette.secondary,
+              color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
               boxSizing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
@@ -99,14 +99,15 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
                       setActive(lcText);
                     }}
                     sx={{
-                      backgroundColor: active === lcText ? theme.palette.secondary[700] : "transparent",
-                      color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[100],
+                      backgroundColor: active === lcText ? theme.palette.secondary[300] : "transparent",
+                      color: active === lcText ? theme.palette.primary[600] : theme.palette.text.primary,
+
                     }}
                   >
                     <ListItemIcon
                       sx={{
                         ml: "2rem",
-                        color: active === lcText ? theme.palette.primary[700] : theme.palette.secondary[200],
+                        color: active === lcText ? theme.palette.primary[700] : theme.palette.text.secondary,
                       }}
                     >
                       {icon}
