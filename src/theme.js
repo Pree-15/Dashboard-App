@@ -1,4 +1,5 @@
 // theme.js
+
 export const tokensDark = {
   grey: {
     0: "#ffffff",
@@ -15,17 +16,7 @@ export const tokensDark = {
     1000: "#121212",
   },
   primary: {
-    100: "#e0f7fa",
-    200: "#b2ebf2",
-    300: "#80deea",
-    400: "#4dd0e1",
-    500: "#00bcd4", // main
-    600: "#00acc1",
-    700: "#0097a7",
-    800: "#00838f",
-    900: "#006064",
-  },
-  secondary: {
+    // Indigo
     100: "#e8eaf6",
     200: "#c5cae9",
     300: "#9fa8da",
@@ -35,6 +26,18 @@ export const tokensDark = {
     700: "#3949ab",
     800: "#303f9f",
     900: "#283593",
+  },
+  secondary: {
+    // Amber
+    100: "#fff8e1",
+    200: "#ffecb3",
+    300: "#ffe082",
+    400: "#ffd54f",
+    500: "#ffca28", // main
+    600: "#ffc107",
+    700: "#ffb300",
+    800: "#ffa000",
+    900: "#ff8f00",
   },
 };
 
@@ -51,7 +54,6 @@ function reverseTokens(tokens) {
 }
 export const tokensLight = reverseTokens(tokensDark);
 
-// MUI Theme
 export const themeSettings = (mode) => {
   const tokens = mode === "dark" ? tokensDark : tokensLight;
   return {
@@ -69,13 +71,13 @@ export const themeSettings = (mode) => {
         light: tokens.secondary[300],
         dark: tokens.secondary[700],
       },
-      background: {
-        default: mode === "dark" ? "#101F27" : "#ffffff",
-        alt: mode === "dark" ? "#132A35" : "#f5f7fa",
-      },
       neutral: {
         ...tokens.grey,
         main: tokens.grey[500],
+      },
+      background: {
+        default: mode === "dark" ? "#10131A" : "#ffffff",
+        alt: mode === "dark" ? "#161B25" : "#f5f7fa",
       },
     },
     typography: {
