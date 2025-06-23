@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 // Images
 import Mens from "../../assets/images/Mens.jpeg";
 import Womens from "../../assets/images/Womens.jpg";
-import Kids from "../../assets/images/Kids.jpeg";
+import Kids from "../../assets/images/Kids.jpg";
 import Others from "../../assets/images/Others.jpeg";
 
 // Default ads
