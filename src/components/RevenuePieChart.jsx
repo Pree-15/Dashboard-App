@@ -33,13 +33,13 @@ const RevenuePieChart = ({ filter }) => {
         innerRadius={0.2}
         padAngle={1.5}
         cornerRadius={5}
-        colors={{ scheme: "blues" }}
+        colors={{ scheme: "oranges" }}
         arcLabelsSkipAngle={10}
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor={theme.palette.secondary.light}
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: "color" }}
-        arcLabelsTextColor={{ from: "color", modifiers: [["darker", 2]] }}
+        arcLabelsTextColor={{ from: "color", modifiers: [["darker", 3]] }}
         tooltip={({ datum }) => {
           const value = datum.value?.toLocaleString?.() || datum.value;
           const percentage = datum.percentage != null ? `${datum.percentage.toFixed(1)}%` : "—";
