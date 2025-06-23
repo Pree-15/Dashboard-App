@@ -14,10 +14,10 @@ import {
 } from "@mui/material";
 
 const lowStockProducts = [
-  { id: 1, name: "Men Slim Jeans", category: "Men", stock: 5 },
-  { id: 2, name: "Kids Cartoon Tee", category: "Kids", stock: 3 },
-  { id: 3, name: "Women Palazzo", category: "Women", stock: 2 },
-  { id: 4, name: "Men Shirt", category: "Men", stock: 8 }
+  { id: 1, name: "Women Crop Top", category: "Women", stock: 4 },
+  { id: 2, name: "Kids Denim Shorts", category: "Kids", stock: 2 },
+  { id: 3, name: "Men Hoodie", category: "Men", stock: 6 },
+  { id: 4, name: "Women Maxi Dress", category: "Women", stock: 3 }
 ];
 
 const LowStock = () => {

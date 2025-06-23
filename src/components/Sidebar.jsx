@@ -77,7 +77,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
               fontWeight="bold"
               color={theme.palette.secondary.main}
             >
-              .cloths
+              cloths
             </Typography>
             {!isNonMobile && (
               <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>

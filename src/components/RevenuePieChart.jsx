@@ -4,24 +4,23 @@ import { Box, useTheme } from "@mui/material";
 
 const RevenuePieChart = ({ filter }) => {
   const theme = useTheme();
-
-  const sampleData = {
-    week: [
-      { id: "Men", label: "Men", value: 12000 },
-      { id: "Women", label: "Women", value: 18000 },
-      { id: "Kids", label: "Kids", value: 7000 },
-    ],
-    month: [
-      { id: "Men", label: "Men", value: 55000 },
-      { id: "Women", label: "Women", value: 75000 },
-      { id: "Kids", label: "Kids", value: 27000 },
-    ],
-    year: [
-      { id: "Men", label: "Men", value: 670000 },
-      { id: "Women", label: "Women", value: 880000 },
-      { id: "Kids", label: "Kids", value: 320000 },
-    ],
-  };
+const sampleData = {
+  week: [
+    { id: "Men", label: "Men", value: 9500 },
+    { id: "Women", label: "Women", value: 14500 },
+    { id: "Kids", label: "Kids", value: 5200 },
+  ],
+  month: [
+    { id: "Men", label: "Men", value: 46000 },
+    { id: "Women", label: "Women", value: 69000 },
+    { id: "Kids", label: "Kids", value: 21000 },
+  ],
+  year: [
+    { id: "Men", label: "Men", value: 610000 },
+    { id: "Women", label: "Women", value: 790000 },
+    { id: "Kids", label: "Kids", value: 290000 },
+  ],
+};
 
   const data = sampleData[filter];
 

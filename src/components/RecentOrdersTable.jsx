@@ -17,12 +17,12 @@ import {
 import {Link} from "react-router-dom";
 
 const sampleOrders = [
-  { id: "001", customer: "Ramesh", date: "2024-06-20", product: "Cotton Shirt", amount: 350, status: "Pending" },
-  { id: "002", customer: "Suresh", date: "2024-06-19", product: "Denim Jeans", amount: 700, status: "Dispatched" },
-  { id: "003", customer: "Priya", date: "2024-06-18", product: "Floral Dress", amount: 500, status: "Cancelled" },
-  { id: "004", customer: "Ankit", date: "2024-06-17", product: "Shoes", amount: 1200, status: "Dispatched" },
-  { id: "005", customer: "Kavya", date: "2024-06-16", product: "Sunglasses", amount: 950, status: "Pending" },
-  { id: "006", customer: "Rahul", date: "2024-06-15", product: "Hat", amount: 220, status: "Cancelled" },
+  { id: "007", customer: "Neha", date: "2024-06-21", product: "Leather Jacket", amount: 1800, status: "Pending" },
+  { id: "008", customer: "Amit", date: "2024-06-20", product: "Sneakers", amount: 1500, status: "Delivered" },
+  { id: "009", customer: "Divya", date: "2024-06-19", product: "Handbag", amount: 950, status: "Dispatched" },
+  { id: "010", customer: "Vikram", date: "2024-06-18", product: "Casual T-Shirt", amount: 450, status: "Cancelled" },
+  { id: "011", customer: "Sneha", date: "2024-06-17", product: "Jeans Shorts", amount: 650, status: "Delivered" },
+  { id: "012", customer: "Manoj", date: "2024-06-16", product: "Sports Watch", amount: 2100, status: "Pending" }
 ];
 
 const getStatusColor = (status) => {
@@ -53,13 +53,13 @@ const RecentOrdersTable = () => {
         sx={{ backgroundColor: theme.palette.background.alt, borderRadius: "8px" }}>
           <Table>
             <TableHead>
-              <TableRow sx={{ backgroundColor: theme.palette.primary.light }}>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Order ID</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Customer</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Date</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Product</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Amount</TableCell>
-                <TableCell sx={{ color: theme.palette.primary.contrastText }}>Status</TableCell>
+              <TableRow  sx={{ backgroundColor: theme.palette.primary.light }}>
+                <TableCell sx={{ color: theme.palette.primary }}>Customer</TableCell>
+                <TableCell sx={{ color: theme.palette.primary }}>Order ID</TableCell>
+                <TableCell sx={{ color: theme.palette.primary }}>Date</TableCell>
+                <TableCell sx={{ color: theme.palette.primary }}>Product</TableCell>
+                <TableCell sx={{ color: theme.palette.primary}}>Amount</TableCell>
+                <TableCell sx={{ color: theme.palette.primary }}>Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

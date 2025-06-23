@@ -19,32 +19,51 @@ import {Link} from "react-router-dom";
 const sampleExpenses = [
   {
     id: 1,
-    date: "2024-12-01",
-    category: "Utilities",
-    subCategory: "Electricity",
-    description: "Office power bill",
-    amount: 1250,
+    date: "2024-11-15",
+    category: "Travel",
+    subCategory: "Taxi",
+    description: "Client meeting commute",
+    amount: 350,
     status: "Paid"
   },
   {
     id: 2,
-    date: "2024-12-03",
-    category: "Internet",
-    subCategory: "WiFi",
-    description: "Fiber internet",
-    amount: 999,
-    status: "Paid"
+    date: "2024-11-18",
+    category: "Office Supplies",
+    subCategory: "Furniture",
+    description: "New office chair",
+    amount: 2450,
+    status: "Unpaid"
   },
   {
     id: 3,
-    date: "2024-12-05",
-    category: "Stationery",
-    subCategory: "Print",
-    description: "Flyers printing",
-    amount: 600,
-    status: "Unpaid"
+    date: "2024-11-20",
+    category: "Food",
+    subCategory: "Snacks",
+    description: "Team refreshments",
+    amount: 780,
+    status: "Paid"
   },
+  {
+    id: 4,
+    date: "2024-11-22",
+    category: "Software",
+    subCategory: "Subscription",
+    description: "Adobe Photoshop license",
+    amount: 1999,
+    status: "Paid"
+  },
+  {
+    id: 5,
+    date: "2024-11-25",
+    category: "Maintenance",
+    subCategory: "Cleaning",
+    description: "Monthly deep cleaning service",
+    amount: 1200,
+    status: "Unpaid"
+  }
 ];
+
 
 const RecentExpensesTable = () => {
   const theme = useTheme();
@@ -60,8 +79,8 @@ const RecentExpensesTable = () => {
         sx={{ backgroundColor: theme.palette.background.alt, borderRadius: "8px" }}>
           <Table>
           <TableHead>
-            <TableRow>
-              <TableCell>#</TableCell>
+            <TableRow  sx={{ backgroundColor: theme.palette.primary.light }}>
+              <TableCell>S.No</TableCell>
               <TableCell>Date</TableCell>
               <TableCell>Category</TableCell>
               <TableCell>Description</TableCell>

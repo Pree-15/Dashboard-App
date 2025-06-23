@@ -9,12 +9,12 @@ import SearchIcon from "@mui/icons-material/Search";
 dayjs.extend(relativeTime);
 
 const sampleReviews = [
-  { id: 1, name: "Ramesh", date: "2023-12-10", rating: 5, title: "The Products I purchased was too good.", content: "Lorem ipsum dolor sit amet...", approved: null },
-  { id: 2, name: "Suresh", date: "2023-12-09", rating: 4, title: "The Products I purchased was too good.", content: "Lorem ipsum dolor sit amet...", approved: null },
-  { id: 3, name: "Ajith", date: "2023-12-08", rating: 5, title: "Really nice!", content: "Perfect fit and quality!", approved: true },
-  { id: 4, name: "Sherin", date: "2023-12-07", rating: 3, title: "Average", content: "Could have been better.", approved: false },
-  { id: 5, name: "Vignesh", date: "2023-12-06", rating: 2, title: "Not satisfied", content: "Late delivery.", approved: false },
-  { id: 6, name: "Joseph", date: "2023-12-05", rating: 4, title: "Liked it!", content: "Fabric is soft and comfy.", approved: true },
+  { id: 1, name: "Karthik", date: "2023-12-11", rating: 5, title: "Excellent quality!", content: "Really happy with the product and delivery speed.", approved: true },
+  { id: 2, name: "Divya", date: "2023-12-10", rating: 3, title: "It's okay", content: "Fit was slightly off, but still wearable.", approved: false },
+  { id: 3, name: "Sneha", date: "2023-12-09", rating: 4, title: "Worth the price", content: "Looks as shown in the image. Decent quality.", approved: null },
+  { id: 4, name: "Manoj", date: "2023-12-08", rating: 2, title: "Disappointed", content: "Color faded after one wash.", approved: false },
+  { id: 5, name: "Revathi", date: "2023-12-07", rating: 5, title: "Loved it!", content: "Great material and perfect stitching.", approved: true },
+  { id: 6, name: "Arun", date: "2023-12-06", rating: 1, title: "Poor experience", content: "Received the wrong item.", approved: null }
 ];
 
 const ReviewsRatings = () => {

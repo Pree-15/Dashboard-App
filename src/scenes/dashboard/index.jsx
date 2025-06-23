@@ -17,11 +17,11 @@ const Dashboard = () => {
 
 
   const stats = [
-    { title: "Mens", value: 500 },
-    { title: "Womens", value: 660 },
-    { title: "Kids", value: 400 },
-    { title: "Accessories", value: 250 },
-  ];
+  { title: "Mens", value: 620 },
+  { title: "Womens", value: 740 },
+  { title: "Kids", value: 380 },
+  { title: "Accessories", value: 310 }
+];
 
   return (
     <Box p={3}>

@@ -18,7 +18,7 @@ const Layout = () => {
         drawerWidth={drawerWidth}
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
-        user={{ name: "Nityananda", occupation: "Admin" }}
+        user={{ name: "Preethi", occupation: "Admin" }}
       />
 
       {/* Main Content Area */}
