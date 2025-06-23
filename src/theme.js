@@ -1,94 +1,77 @@
-// theme.js
+// theme.js (Light Mode Only - Teal + Orange)
 
-export const tokensDark = {
+export const tokensLight = {
   grey: {
     0: "#ffffff",
     50: "#f9f9f9",
     100: "#f0f0f0",
-    200: "#d6d6d6",
-    300: "#bdbdbd",
+    200: "#e0e0e0",
+    300: "#c2c2c2",
     400: "#a3a3a3",
-    500: "#8a8a8a",
-    600: "#6e6e6e",
-    700: "#525252",
-    800: "#3b3b3b",
-    900: "#1e1e1e",
-    1000: "#121212",
+    500: "#858585",
+    600: "#666666",
+    700: "#4d4d4d",
+    800: "#2e2e2e",
+    900: "#141414",
   },
   primary: {
-    // Indigo
-    100: "#e8eaf6",
-    200: "#c5cae9",
-    300: "#9fa8da",
-    400: "#7986cb",
-    500: "#5c6bc0", // main
-    600: "#3f51b5",
-    700: "#3949ab",
-    800: "#303f9f",
-    900: "#283593",
+    // Teal
+    100: "#e0f2f1",
+    200: "#b2dfdb",
+    300: "#80cbc4",
+    400: "#4db6ac",
+    500: "#26a69a", // main
+    600: "#009688",
+    700: "#00897b",
+    800: "#00796b",
+    900: "#004d40",
   },
   secondary: {
-    // Amber
-    100: "#fff8e1",
-    200: "#ffecb3",
-    300: "#ffe082",
-    400: "#ffd54f",
-    500: "#ffca28", // main
-    600: "#ffc107",
-    700: "#ffb300",
-    800: "#ffa000",
-    900: "#ff8f00",
+    // Orange
+    100: "#fff3e0",
+    200: "#ffe0b2",
+    300: "#ffcc80",
+    400: "#ffb74d",
+    500: "#ffa726", // main
+    600: "#ff9800",
+    700: "#fb8c00",
+    800: "#f57c00",
+    900: "#ef6c00",
   },
 };
 
-function reverseTokens(tokens) {
-  const reversed = {};
-  Object.entries(tokens).forEach(([key, shades]) => {
-    const reversedShades = Object.entries(shades).reduce((acc, [shade, color], i, arr) => {
-      acc[shade] = arr[arr.length - i - 1][1];
-      return acc;
-    }, {});
-    reversed[key] = reversedShades;
-  });
-  return reversed;
-}
-export const tokensLight = reverseTokens(tokensDark);
-
-export const themeSettings = (mode) => {
-  const tokens = mode === "dark" ? tokensDark : tokensLight;
-  return {
-    palette: {
-      mode,
-      primary: {
-        ...tokens.primary,
-        main: tokens.primary[500],
-        light: tokens.primary[300],
-        dark: tokens.primary[700],
-      },
-      secondary: {
-        ...tokens.secondary,
-        main: tokens.secondary[500],
-        light: tokens.secondary[300],
-        dark: tokens.secondary[700],
-      },
-      neutral: {
-        ...tokens.grey,
-        main: tokens.grey[500],
-      },
-      background: {
-        default: mode === "dark" ? "#10131A" : "#ffffff",
-        alt: mode === "dark" ? "#161B25" : "#f5f7fa",
-      },
+export const themeSettings = {
+  palette: {
+    mode: "light",
+    primary: {
+      ...tokensLight.primary,
+      main: tokensLight.primary[500],
+      light: tokensLight.primary[300],
+      dark: tokensLight.primary[700],
     },
-    typography: {
-      fontFamily: ["Inter", "sans-serif"].join(","),
-      fontSize: 13,
-      h1: { fontSize: 40 },
-      h2: { fontSize: 32 },
-      h3: { fontSize: 24 },
-      h4: { fontSize: 20 },
-      h5: { fontSize: 16 },
-      h6: { fontSize: 14 },
+    secondary: {
+      ...tokensLight.secondary,
+      main: tokensLight.secondary[500],
+      light: tokensLight.secondary[300],
+      dark: tokensLight.secondary[700],
     },
-  };
+    neutral: {
+      ...tokensLight.grey,
+      main: tokensLight.grey[500],
+    },
+    background: {
+      default: tokensLight.grey[0],
+      alt: tokensLight.grey[50],
+    },
+  },
+  typography: {
+    fontFamily: ["Inter", "sans-serif"].join(","),
+    fontSize: 13,
+    h1: { fontSize: 40 },
+    h2: { fontSize: 32 },
+    h3: { fontSize: 24 },
+    h4: { fontSize: 20 },
+    h5: { fontSize: 16 },
+    h6: { fontSize: 14 },
+  },
 };
