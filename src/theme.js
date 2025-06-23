@@ -1,34 +1,31 @@
-// color design tokens export
+// theme.js
 export const tokensDark = {
   grey: {
     0: "#ffffff",
-    10: "#f6f6f6",
-    50: "#f0f0f0",
-    100: "#e0e0e0",
-    200: "#c2c2c2",
-    300: "#a3a3a3",
-    400: "#858585",
-    500: "#666666",
-    600: "#525252",
-    700: "#3d3d3d",
-    800: "#292929",
-    900: "#141414",
-    1000: "#000000",
+    50: "#f9f9f9",
+    100: "#f0f0f0",
+    200: "#d6d6d6",
+    300: "#bdbdbd",
+    400: "#a3a3a3",
+    500: "#8a8a8a",
+    600: "#6e6e6e",
+    700: "#525252",
+    800: "#3b3b3b",
+    900: "#1e1e1e",
+    1000: "#121212",
   },
   primary: {
-    // Cyan Shades
-    100: "#ccfbf1",
-    200: "#99f6e4",
-    300: "#5eead4",
-    400: "#2dd4bf",
-    500: "#06b6d4", // main
-    600: "#0891b2",
-    700: "#0e7490",
-    800: "#155e75",
-    900: "#164e63",
+    100: "#e0f7fa",
+    200: "#b2ebf2",
+    300: "#80deea",
+    400: "#4dd0e1",
+    500: "#00bcd4", // main
+    600: "#00acc1",
+    700: "#0097a7",
+    800: "#00838f",
+    900: "#006064",
   },
   secondary: {
-    // Indigo Shades
     100: "#e8eaf6",
     200: "#c5cae9",
     300: "#9fa8da",
@@ -41,27 +38,22 @@ export const tokensDark = {
   },
 };
 
-// function that reverses the color palette
-function reverseTokens(tokensDark) {
-  const reversedTokens = {};
-  Object.entries(tokensDark).forEach(([key, val]) => {
-    const keys = Object.keys(val);
-    const values = Object.values(val);
-    const length = keys.length;
-    const reversedObj = {};
-    for (let i = 0; i < length; i++) {
-      reversedObj[keys[i]] = values[length - i - 1];
-    }
-    reversedTokens[key] = reversedObj;
+function reverseTokens(tokens) {
+  const reversed = {};
+  Object.entries(tokens).forEach(([key, shades]) => {
+    const reversedShades = Object.entries(shades).reduce((acc, [shade, color], i, arr) => {
+      acc[shade] = arr[arr.length - i - 1][1];
+      return acc;
+    }, {});
+    reversed[key] = reversedShades;
   });
-  return reversedTokens;
+  return reversed;
 }
 export const tokensLight = reverseTokens(tokensDark);
 
-// MUI theme settings
+// MUI Theme
 export const themeSettings = (mode) => {
   const tokens = mode === "dark" ? tokensDark : tokensLight;
-
   return {
     palette: {
       mode,
@@ -77,42 +69,24 @@ export const themeSettings = (mode) => {
         light: tokens.secondary[300],
         dark: tokens.secondary[700],
       },
+      background: {
+        default: mode === "dark" ? "#101F27" : "#ffffff",
+        alt: mode === "dark" ? "#132A35" : "#f5f7fa",
+      },
       neutral: {
         ...tokens.grey,
         main: tokens.grey[500],
       },
-      background: {
-        default: mode === "dark" ? tokens.grey[900] : tokens.grey[0],
-        alt: mode === "dark" ? tokens.grey[800] : tokens.grey[50],
-      },
     },
     typography: {
       fontFamily: ["Inter", "sans-serif"].join(","),
-      fontSize: 12,
-      h1: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 40,
-      },
-      h2: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 32,
-      },
-      h3: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 24,
-      },
-      h4: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 20,
-      },
-      h5: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 16,
-      },
-      h6: {
-        fontFamily: ["Inter", "sans-serif"].join(","),
-        fontSize: 14,
-      },
+      fontSize: 13,
+      h1: { fontSize: 40 },
+      h2: { fontSize: 32 },
+      h3: { fontSize: 24 },
+      h4: { fontSize: 20 },
+      h5: { fontSize: 16 },
+      h6: { fontSize: 14 },
     },
   };
 };
