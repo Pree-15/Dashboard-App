@@ -1,9 +1,9 @@
 // color design tokens export
 export const tokensDark = {
   grey: {
-    0: "#ffffff", // manually adjusted
-    10: "#f6f6f6", // manually adjusted
-    50: "#f0f0f0", // manually adjusted
+    0: "#ffffff",
+    10: "#f6f6f6",
+    50: "#f0f0f0",
     100: "#e0e0e0",
     200: "#c2c2c2",
     300: "#a3a3a3",
@@ -13,32 +13,31 @@ export const tokensDark = {
     700: "#3d3d3d",
     800: "#292929",
     900: "#141414",
-    1000: "#000000", // manually adjusted
+    1000: "#000000",
   },
   primary: {
-    // blue
-    100: "#d3d4de",
-    200: "#a6a9be",
-    300: "#7a7f9d",
-    400: "#4d547d",
-    500: "#21295c",
-    600: "#191F45", // manually adjusted
-    700: "#141937",
-    800: "#0d1025",
-    900: "#070812",
+    // Cyan Shades
+    100: "#ccfbf1",
+    200: "#99f6e4",
+    300: "#5eead4",
+    400: "#2dd4bf",
+    500: "#06b6d4", // main
+    600: "#0891b2",
+    700: "#0e7490",
+    800: "#155e75",
+    900: "#164e63",
   },
   secondary: {
-    // yellow
-    50: "#f0f0f0", // manually adjusted
-    100: "#fff6e0",
-    200: "#ffedc2",
-    300: "#ffe3a3",
-    400: "#ffda85",
-    500: "#ffd166",
-    600: "#cca752",
-    700: "#997d3d",
-    800: "#665429",
-    900: "#332a14",
+    // Indigo Shades
+    100: "#e8eaf6",
+    200: "#c5cae9",
+    300: "#9fa8da",
+    400: "#7986cb",
+    500: "#5c6bc0", // main
+    600: "#3f51b5",
+    700: "#3949ab",
+    800: "#303f9f",
+    900: "#283593",
   },
 };
 
@@ -59,53 +58,33 @@ function reverseTokens(tokensDark) {
 }
 export const tokensLight = reverseTokens(tokensDark);
 
-// mui theme settings
+// MUI theme settings
 export const themeSettings = (mode) => {
+  const tokens = mode === "dark" ? tokensDark : tokensLight;
+
   return {
     palette: {
-      mode: mode,
-      ...(mode === "dark"
-        ? {
-            // palette values for dark mode
-            primary: {
-              ...tokensDark.primary,
-              main: tokensDark.primary[400],
-              light: tokensDark.primary[400],
-            },
-            secondary: {
-              ...tokensDark.secondary,
-              main: tokensDark.secondary[300],
-            },
-            neutral: {
-              ...tokensDark.grey,
-              main: tokensDark.grey[500],
-            },
-            background: {
-              default: tokensDark.primary[600],
-              alt: tokensDark.primary[500],
-            },
-          }
-        : {
-            // palette values for light mode
-            primary: {
-              ...tokensLight.primary,
-              main: tokensDark.grey[50],
-              light: tokensDark.grey[100],
-            },
-            secondary: {
-              ...tokensLight.secondary,
-              main: tokensDark.secondary[600],
-              light: tokensDark.secondary[700],
-            },
-            neutral: {
-              ...tokensLight.grey,
-              main: tokensDark.grey[500],
-            },
-            background: {
-              default: tokensDark.grey[0],
-              alt: tokensDark.grey[50],
-            },
-          }),
+      mode,
+      primary: {
+        ...tokens.primary,
+        main: tokens.primary[500],
+        light: tokens.primary[300],
+        dark: tokens.primary[700],
+      },
+      secondary: {
+        ...tokens.secondary,
+        main: tokens.secondary[500],
+        light: tokens.secondary[300],
+        dark: tokens.secondary[700],
+      },
+      neutral: {
+        ...tokens.grey,
+        main: tokens.grey[500],
+      },
+      background: {
+        default: mode === "dark" ? tokens.grey[900] : tokens.grey[0],
+        alt: mode === "dark" ? tokens.grey[800] : tokens.grey[50],
+      },
     },
     typography: {
       fontFamily: ["Inter", "sans-serif"].join(","),
