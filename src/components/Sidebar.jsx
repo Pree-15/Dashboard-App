@@ -62,7 +62,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
           sx={{
             width: drawerWidth,
             "& .MuiDrawer-paper": {
-              color: theme.palette.secondary[200],
+              color: theme.palette.secondary,
               backgroundColor: theme.palette.background.alt,
               boxSizing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
@@ -99,14 +99,14 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
                       setActive(lcText);
                     }}
                     sx={{
-                      backgroundColor: active === lcText ? theme.palette.secondary[300] : "transparent",
+                      backgroundColor: active === lcText ? theme.palette.secondary[700] : "transparent",
                       color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[100],
                     }}
                   >
                     <ListItemIcon
                       sx={{
                         ml: "2rem",
-                        color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[200],
+                        color: active === lcText ? theme.palette.primary[700] : theme.palette.secondary[200],
                       }}
                     >
                       {icon}
@@ -135,7 +135,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
                   mt: "2rem",
                   color: active === "log out"
                     ? theme.palette.primary[600]
-                    : theme.palette.secondary[100],
+                    : theme.palette.secondary[600],
                 }}
               >
                 <ListItemIcon
@@ -143,7 +143,7 @@ const Sidebar = ({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) 
                     ml: "2rem",
                     color: active === "log out"
                       ? theme.palette.primary[600]
-                      : theme.palette.secondary[200],
+                      : theme.palette.secondary[600],
                   }}
                 >
                   <LogoutOutlined />
