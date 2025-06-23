@@ -74,8 +74,5 @@ export const themeSettings = {
     h5: { fontSize: 16 },
     h6: { fontSize: 14 },
   },
-<<<<<<< HEAD
+
 };
-=======
-};
->>>>>>> ee4d3f4 (fixed code)
