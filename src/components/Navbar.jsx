@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import {
-<<<<<<< HEAD
-  LightModeOutlined,
-  DarkModeOutlined,
-=======
-
->>>>>>> ee4d3f4 (fixed code)
   Menu as MenuIcon,
   Search,
   SettingsOutlined,
@@ -18,31 +12,14 @@ import {
   Toolbar,
   useTheme,
   Typography,
-<<<<<<< HEAD
-  Button,
-  Box,
-=======
-
->>>>>>> ee4d3f4 (fixed code)
   Menu,
   MenuItem,
   Avatar
 } from '@mui/material';
-<<<<<<< HEAD
-import { useDispatch } from 'react-redux';
-import { setMode } from 'state';
-=======
-
-
->>>>>>> ee4d3f4 (fixed code)
 import FlexBetween from 'components/FlexBetween';
 import profileImage from 'assets/profile.jpg';
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
-<<<<<<< HEAD
-  const dispatch = useDispatch();
-=======
->>>>>>> ee4d3f4 (fixed code)
   const theme = useTheme();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -81,16 +58,6 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 
           {/* RIGHT SIDE */}
           <FlexBetween gap="1.5rem">
-            {/* Theme toggle 
-            <IconButton onClick={() => dispatch(setMode())}>
-              {theme.palette.mode === "dark" ? (
-                <DarkModeOutlined sx={{ fontSize: "25px" }} />
-              ) : (
-                <LightModeOutlined sx={{ fontSize: "25px" }} />
-              )}
-            </IconButton> */}
-            
-
             <IconButton>
               <SettingsOutlined sx={{ fontSize: "25px" }} />
             </IconButton>
@@ -121,8 +88,4 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar;
->>>>>>> ee4d3f4 (fixed code)
