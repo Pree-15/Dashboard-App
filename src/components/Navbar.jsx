@@ -65,14 +65,15 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 
           {/* RIGHT SIDE */}
           <FlexBetween gap="1.5rem">
-            {/* Theme toggle */}
+            {/* Theme toggle 
             <IconButton onClick={() => dispatch(setMode())}>
               {theme.palette.mode === "dark" ? (
                 <DarkModeOutlined sx={{ fontSize: "25px" }} />
               ) : (
                 <LightModeOutlined sx={{ fontSize: "25px" }} />
               )}
-            </IconButton>
+            </IconButton> */}
+            
 
             <IconButton>
               <SettingsOutlined sx={{ fontSize: "25px" }} />
